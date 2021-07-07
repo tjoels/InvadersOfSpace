@@ -45,21 +45,22 @@ let CURRENT_SPEED = INVADER_SPEED
 const BULLET_SPEED = 400
 const LEVEL_DOWN = 50 // how much the invaders move down each time they hit the sides.
 const TIME_LEFT = 14
+// const TIME_LEFT = 1
 
 layer(['obj', 'ui'], 'obj')
 
 addLevel([
-  '!^^^^^^^^^^^^     &',
-  '!^^^^^^^^^^^^     &',
-  '!^^^^^^^^^^^^     &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &'
+  '!^^^^^^^^^^^^        &',
+  '!^^^^^^^^^^^^        &',
+  '!^^^^^^^^^^^^        &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &'
 ], {
   width: 30,
   height: 22,
@@ -180,11 +181,22 @@ action('space-invader', (s) => {
 });
 scene("win", (args = {}) => {
 add([
-  text(args.score),
+  text(args.score + "\n\n"),
   origin('center'),
   scale(10),
   pos(width() / 2, height() / 2)
   ])
+
+add([
+  text("Press up arrow key to continue"),
+  origin('center'),
+  scale(2),
+  pos(width() / 2, height() / 2)
+])
+
+  keyPress('up', () => {
+    go('main')
+  })
 });
 start("main");
 

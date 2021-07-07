@@ -4,21 +4,22 @@ let CURRENT_SPEED = INVADER_SPEED
 const BULLET_SPEED = 400
 const LEVEL_DOWN = 50 // how much the invaders move down each time they hit the sides.
 const TIME_LEFT = 14
+// const TIME_LEFT = 1
 
 layer(['obj', 'ui'], 'obj')
 
 addLevel([
-  '!^^^^^^^^^^^^     &',
-  '!^^^^^^^^^^^^     &',
-  '!^^^^^^^^^^^^     &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &',
-  '!                 &'
+  '!^^^^^^^^^^^^        &',
+  '!^^^^^^^^^^^^        &',
+  '!^^^^^^^^^^^^        &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &',
+  '!                    &'
 ], {
   width: 30,
   height: 22,

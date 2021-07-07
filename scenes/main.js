@@ -30,7 +30,8 @@ addLevel([
 
 const player = add([
   sprite('space-ship'),
-  pos(width() / 2, height() / 2),
+  // pos(width() / 2, height() / 2),
+  pos(width() / 2, height() / 1.2),
   origin('center')
 ])
 
@@ -119,22 +120,22 @@ collides('space-invader', 'right-wall', () => {
   every('space-invader', (s) => {
     s.move(0, LEVEL_DOWN)
   })
-})
+});
 
 collides('space-invader', 'left-wall', () => {
   CURRENT_SPEED = INVADER_SPEED
   every('space-invader', (s) => {
     s.move(0, LEVEL_DOWN)
   })
-})
+});
 
 player.overlaps('space-invader', () => {
   go('win', { score : score.value })
-})
+});
 
 action('space-invader', (s) => {
   if (s.pos.y >= (12 * 22 )) {
   // if (s.pos.y >= height() /2) {
     go('win', { score : score.value })
   }
-})
+});

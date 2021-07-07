@@ -73,7 +73,7 @@ action('bullet', (b) => {
 
 const score = add([
   text((args.prevScore ? args.prevScore : 0)),
-  pos(50,60),
+  pos(25,50),
   layer('ui'),
   scale(3),
   {
@@ -84,7 +84,7 @@ const score = add([
 
 const timer = add([
   text('0'),
-  pos(90,50),
+  pos(25,25),
   scale(2),
   layer('ui'),
   {

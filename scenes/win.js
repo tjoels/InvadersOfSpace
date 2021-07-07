@@ -1,7 +1,7 @@
 add([
   text(args.score + "\n\n"),
   origin('center'),
-  scale(10),
+  scale(6),
   pos(width() / 2, height() / 2)
   ])
 
@@ -13,5 +13,5 @@ add([
 ])
 
   keyPress('up', () => {
-    go('main')
+    go('main', { prevScore : args.score })
   })

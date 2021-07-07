@@ -4,7 +4,7 @@ let CURRENT_SPEED = INVADER_SPEED
 const BULLET_SPEED = 400
 const LEVEL_DOWN = 50 // how much the invaders move down each time they hit the sides.
 const TIME_LEFT = 14
-// const TIME_LEFT = 1
+// const TIME_LEFT = 2
 
 layer(['obj', 'ui'], 'obj')
 
@@ -56,7 +56,7 @@ keyPress('space', () => {
 })
 
 collides('bullet', 'space-invader', (b,s) => {
-  camShake(score.value)
+  camShake(score.value / 10)
   destroy(b)
   destroy(s)
   score.value++
@@ -71,12 +71,13 @@ action('bullet', (b) => {
 })
 
 const score = add([
-  text('0'),
+  text((args.prevScore ? args.prevScore : 0)),
   pos(50,60),
   layer('ui'),
   scale(3),
   {
-    value: 0,
+    value: (args.prevScore ? args.prevScore : 0),
+    // value: 0, // to start with 0 in every new game
   }
 ])
 
